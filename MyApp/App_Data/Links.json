@@ -1,0 +1,65 @@
+[
+  {
+    "Id": 1,
+    "Name": "Employee Wise",
+    "Address": "https://www.myemploywise.com",
+    "Description": "This is where the daily login and log out time is recorded",
+    "Category": "Office"
+  },
+  {
+    "Id": 2,
+    "Name": "MynSol",
+    "Address": "https://mypay.myndsolution.com/login.aspx",
+    "Description": "This is a payroll site, where the pay slips and flexi components are available",
+    "Category": "Office"
+  },
+  {
+    "Id": 3,
+    "Name": "AAPC Learning",
+    "Address": "http://learn.aapc.com/employeedev/lms/index.php?r=site/index&login=1",
+    "Description": "Learning Center for Employees",
+    "Category": "Office"
+  },
+  {
+    "Id": 4,
+    "Name": "Test",
+    "Address": "https://www.myemploywise.com",
+    "Description": "Daily attendence Track and leave management portal",
+    "Category": "Office"
+  },
+  {
+    "Id": 5,
+    "Name": "Test",
+    "Address": "https://www.myemploywise.com",
+    "Description": "Daily attendence Track and leave management portal",
+    "Category": "Office"
+  },
+  {
+    "Id": 6,
+    "Name": "TEst1asdf",
+    "Address": "https://www.myemploywise.com",
+    "Description": "Daily attendence Track and leave management portal",
+    "Category": "Office"
+  },
+  {
+    "Id": 7,
+    "Name": "asd",
+    "Address": "asdf",
+    "Description": "asd",
+    "Category": "Office"
+  },
+  {
+    "Id": 8,
+    "Name": "adsfa",
+    "Address": "ad",
+    "Description": "asdf",
+    "Category": "Office"
+  },
+  {
+    "Id": 9,
+    "Name": "adfasd",
+    "Address": "asdf",
+    "Description": "adf",
+    "Category": "asdf"
+  }
+]
