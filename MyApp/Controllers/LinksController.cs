@@ -101,8 +101,22 @@ namespace MyApp.Controllers
         }
 
         // DELETE api/links/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            try
+            {
+                var links = new LinksRepository().Retrive();
+                var link = links.FirstOrDefault(p => p.Id == id);
+                if (link == null)
+                    return NotFound();
+                var linkDeleted = new LinksRepository().Delete(id,link);
+                return Ok(linkDeleted);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+
+            }
         }
     }
 }

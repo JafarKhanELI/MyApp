@@ -46,6 +46,21 @@ namespace MyApp.Models
             return link;
         }
 
+        public LinkModel Delete(int id, LinkModel link)
+        {
+            var links = Retrive();
+            var index = links.FindIndex(l => l.Id == id);
+            if (index >= 0)
+            {
+                links.RemoveAt(index);
+                WriteData(links);
+
+            }
+            else
+                return null;
+            return link;
+        }
+
         public bool WriteData(List<LinkModel> links)
         {
             var json = JsonConvert.SerializeObject(links, Formatting.Indented);

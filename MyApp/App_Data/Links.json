@@ -40,26 +40,5 @@
     "Address": "https://www.myemploywise.com",
     "Description": "Daily attendence Track and leave management portal",
     "Category": "Office"
-  },
-  {
-    "Id": 7,
-    "Name": "asd",
-    "Address": "asdf",
-    "Description": "asd",
-    "Category": "Office"
-  },
-  {
-    "Id": 8,
-    "Name": "adsfa",
-    "Address": "ad",
-    "Description": "asdf",
-    "Category": "Office"
-  },
-  {
-    "Id": 9,
-    "Name": "adfasd",
-    "Address": "asdf",
-    "Description": "adf",
-    "Category": "asdf"
   }
 ]
