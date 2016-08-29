@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyApp</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp" ng-controller="mainCtrl as vm">
+  
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">MyApp</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#createLink">Create Link</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br/>
+    {{vm.message}}
+    <div class="container">
+        <div ng-view></div>
+    </div>
+   
+    
+    <!-- Library Scripts -->
+    <script src="scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <!--<script src="common/common.services.js"></script>
+    <script src="common/productResource.js"></script>
+    <script src="common/userAccount.js"></script>
+    <script src="common/currentUser.js"></script>-->
+
+    <!-- Product Controllers -->
+    <script src="app/mainCtrl.js"></script>
+    <script src="common/commonServices.js"></script>
+    <script src="common/requests.js"></script>
+    <!--<script src="app/products/productListCtrl.js"></script>
+    <script src="app/products/productEditCtrl.js"></script>
+    <script src="app/mainCtrl.js"></script>-->
+</body>
+</html>

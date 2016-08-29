@@ -1,0 +1,25 @@
+﻿<h1>Welcome to MyApp</h1>
+
+<div class="panel-body">
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Description</td>
+                <td>Category</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="link in vm.links">
+                <td>{{ link.name}}</td>
+                <td><a href="{{ link.address }}">{{ link.address }}</a></td>
+                <td>{{ link.description}}</td>
+                <td>{{ link.category}}</td>
+                <td><input type="button" value="Edit" class="btn btn-primary btn-block" ng-click="vm.edit(link.id)" /></td>
+                <td><input type="button" value="Delete" class="btn btn-primary btn-block" ng-click="vm.delete(link.id)" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
