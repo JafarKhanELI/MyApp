@@ -21,24 +21,38 @@
     "Category": "Office"
   },
   {
-    "Id": 4,
-    "Name": "Test",
-    "Address": "https://www.myemploywise.com",
-    "Description": "Daily attendence Track and leave management portal",
+    "Id": 7,
+    "Name": "Rally",
+    "Address": "https://rally1.rallydev.com/slm/login.op",
+    "Description": "Agile tool",
     "Category": "Office"
   },
   {
-    "Id": 5,
-    "Name": "Test",
-    "Address": "https://www.myemploywise.com",
-    "Description": "Daily attendence Track and leave management portal",
+    "Id": 8,
+    "Name": "Kwench",
+    "Address": "https://www.kwench.in/klib/#/login",
+    "Description": "corporate book store",
     "Category": "Office"
   },
   {
-    "Id": 6,
-    "Name": "TEst1asdf",
-    "Address": "https://www.myemploywise.com",
-    "Description": "Daily attendence Track and leave management portal",
+    "Id": 9,
+    "Name": "Git Hub",
+    "Address": "https://github.com/Healthicity",
+    "Description": "Source code repository",
+    "Category": "Office"
+  },
+  {
+    "Id": 10,
+    "Name": "Slack online",
+    "Address": "https://healthicity.slack.com/?redir=%2Fmessages%2F%40slackbot%2F",
+    "Description": "Slack messenger",
+    "Category": "Office"
+  },
+  {
+    "Id": 11,
+    "Name": "Bamboo HR",
+    "Address": "https://aapchr.bamboohr.com/dashboard/",
+    "Description": "Bamboo HR",
     "Category": "Office"
   }
 ]
