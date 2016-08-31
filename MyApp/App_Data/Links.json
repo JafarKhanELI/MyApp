@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "Name": "Employee Wise",
+    "Name": null,
     "Address": "https://www.myemploywise.com",
     "Description": "This is where the daily login and log out time is recorded",
     "Category": "Office"

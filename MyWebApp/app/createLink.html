@@ -1,47 +1,57 @@
 ﻿<div>
 
     <div class="container">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" name="createLinkForm" novalidate>
             <h2>Create Link</h2>
 
-            <div class="form-group">
-                <label for="id" class="col-sm-3 control-label">ID</label>
-                <div class="col-sm-9">
-                    <input type="text" id="id" placeholder="id" class="form-control" ng-model="vm.createLink.id" required>
-                </div>
-            </div>
-
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error':createLinkForm.name.$invalid && createLinkForm.name.$dirty}">
                 <label for="name" class="col-sm-3 control-label">Name</label>
-                <div class="col-sm-9">
-                    <input type="text" id="name" placeholder="name" class="form-control" ng-model="vm.createLink.name" required>
+                <div class="col-sm-4">
+                    <input type="text" id="name" name="name" placeholder="name" class="form-control" ng-model="vm.link.name" 
+                           required
+                           ng-minlength="2"
+                           ng-maxlength="12">
                 </div>
+                <span class="help-block has-error">
+                    <span ng-show="createLinkForm.name.$error.required && createLinkForm.name.$dirty">Required</span>
+                    <span ng-show="createLinkForm.name.$error.minlength">Should have minium length of 2 characters</span>
+                    <span ng-show="createLinkForm.name.$error.maxlength">Max length should be 12 characters</span>
+                </span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error':createLinkForm.address.$invalid && createLinkForm.address.$dirty}">
                 <label for="address" class="col-sm-3 control-label">Address</label>
-                <div class="col-sm-9">
-                    <input type="text" id="address" placeholder="address" class="form-control" ng-model="vm.createLink.address" required>
+                <div class="col-sm-4">
+                    <input type="text" id="address" name="address" placeholder="address" class="form-control" ng-model="vm.createLink.address"
+                           required
+                           ng-minlength="2"
+                           ng-maxlength="50">
                 </div>
+                <span class="help-block has-error">
+                    <span ng-show="createLinkForm.address.$error.required && createLinkForm.address.$dirty">Required</span>
+                    <span ng-show="createLinkForm.address.$error.minlength">Min len 2</span>
+                    <span ng-show="createLinkForm.address.$error.maxlength">Max leng 50</span>
+
+                </span>
             </div>
 
             <div class="form-group">
                 <label for="description" class="col-sm-3 control-label">Description</label>
-                <div class="col-sm-9">
+                <div class="col-sm-4">
                     <input type="text" id="description" placeholder="description" class="form-control" ng-model="vm.createLink.description" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="category" class="col-sm-3 control-label">Category</label>
-                <div class="col-sm-9">
+                <div class="col-sm-4">
                     <input type="text" id="category" placeholder="category" class="form-control" ng-model="vm.createLink.category" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <button type="submit" class="btn btn-primary btn-block" ng-click="vm.create()">Create</button>
+                <div class="col-sm-4 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-block" ng-disabled="createLinkForm.$invalid" ng-click="vm.create()">Create</button>
                 </div>
             </div>
             <div ng-show="vm.message">{{vm.message}}</div>

@@ -7,6 +7,7 @@ using System.Web.Http;
 using MyApp.Models;
 using System.Web.Http.Description;
 using System.Web.Http.Cors;
+using System.Web.OData;
 
 namespace MyApp.Controllers
 {
@@ -15,13 +16,14 @@ namespace MyApp.Controllers
     public class LinksController : ApiController
     {
         // GET api/links
+        [EnableQuery()]
         [ResponseType(typeof(LinkModel))]
         public IHttpActionResult Get()
         {
             try
             {
                 var linkRepo = new LinksRepository();
-                return Ok(linkRepo.Retrive());
+                return Ok(linkRepo.Retrive().AsQueryable());
             }
             catch(Exception ex)
             {

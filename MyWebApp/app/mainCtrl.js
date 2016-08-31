@@ -9,6 +9,7 @@
         console.log('Inside main controller');
         var vm = this;
         vm.message = "";
+        vm.filter = "";
         vm.userData = {
             userName: '',
             email: '',
@@ -22,10 +23,12 @@
         };
 
         vm.getList = function () {
-            requests.query(function (data) { vm.links = data });
+            requests.query({
+                $filter: "contains(Name, '" + vm.filter + "') or contains(Description, '" + vm.filter + "') or contains(Address, '" + vm.filter + "')"
+            }, function (data) { vm.links = data }, function (response) { vm.message = response.statusText; });
         };
         vm.getList();
-        
+        //" + vm.filter +"
         vm.registerUser = function () {
             vm.userData.confirmPassword = vm.userData.password;
             vm.userData.userName = "TestUser";
@@ -50,7 +53,9 @@
                 myServices.set(data);
                 vm.link = data;
                 window.location.href = '#editlink';
-            });
+            },
+             function (response) { vm.message = response.statusText; }
+            );
         }
 
         vm.update=function()
@@ -59,33 +64,19 @@
                 console.log('Updated link : ' + vm.link.name);
                 window.location.href = '#';
                 vm.getList();
-            });
+            }, function (response) { vm.message = response.statusText; });
         }
 
         vm.create = function ()
         {
             console.log('Create new link: '+ vm.createLink.name);
-            //vm.createLink.create(function (data) {
-            //    console.log('New link created with ID : ' + data.id);
-            //    window.location.href = '#';
-            //    vm.getList();
-            //});
-
             requests.create(vm.createLink, function (data) {
                 console.log('New link created with ID : ' + data.id);
                 vm.createLink = {};
                     window.location.href = '#';
                     vm.getList();
-            });
+            }, function (response) { vm.message = response.statusText; });
 
-            //vm.link.$save(
-            //        function (data) {
-            //            console.log('New link created with ID : ' + data.id);
-            //        },
-            //        function (response) {
-            //            vm.message = response.statusText + "\r\n";
-            //            console.log(response.statusText);
-            //        });
         }
 
         vm.delete = function(id)
@@ -94,8 +85,14 @@
             requests.deleteLink({ id: id }, function (data) {
                 console.log("Deleted link with id : " + data.id);
                 vm.getList();
-            });
+            }, function (response) { vm.message = response.statusText; });
 
+        }
+
+        vm.search = function () {
+            if (vm.filter == undefined)
+                vm.filter = "";
+            vm.getList();
         }
     }
 
